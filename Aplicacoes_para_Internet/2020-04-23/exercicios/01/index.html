@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1</title>
+
+    <style>
+        button {
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        button#off:hover {
+            cursor: pointer;
+            color: #fff;
+            background-color: rgb(221, 14, 14);
+        }
+
+        button#on:hover {
+            cursor: pointer;
+            color: #000;
+            background-color: rgb(255, 224, 47);
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+
+        <img id="bulb" src="./images/bulb-off.png" width="150px" height="250px">
+    
+        <div style="margin-top: 5px;">
+            <button id="on" onclick="on()">Ligar</button>
+            <button id="off" onclick="off()">Desligar</button>
+        </div>
+
+    </div>
+
+    <script>
+        function on() {
+            document.querySelector('#bulb').src = './images/bulb-on.png'
+        }
+
+        function off() {
+            document.querySelector('#bulb').src = './images/bulb-off.png'
+        }
+    </script>
+</body>
+</html>
