@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula Aplicações para Internet</title>
+
+    <style>
+        body {
+            background: #fff;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        #main-content {
+            margin: 0 40px;
+            padding: 0 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-content">
+
+        <div id="js"></div>
+
+    </div>
+    
+    
+    <script>
+
+
+        document.querySelector('#js').innerHTML += `<h1>Soma de valores</h1>`
+
+        let valor1 = Number(prompt('Digite um número:'))
+        let valor2 = Number(prompt('Digite outro número:'))
+
+        let soma = valor1 + valor2
+
+        document.querySelector('#js').innerHTML += `<p>O resultado da soma dos valores ${valor1} e ${valor2} é ${soma}</p>`
+
+    </script>
+
+</body>
+</html>

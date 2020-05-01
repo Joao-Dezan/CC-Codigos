@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-content">
+
+        <div id="imc">
+            <ul>
+                <li>
+                    <h1>Calcule seu IMC</h1>
+                </li>
+                
+                <li>
+                    <label for="weight">Seu peso em Kg: </label>
+                    <input type="number" id="weight">
+                </li>
+
+                <li>
+                    <label for="height">Sua altura em metros:</label>
+                    <input type="number" id="height">
+                </li>
+
+                <li>
+                    <button type="submit" onclick="imc()">Calcular</button>
+                </li>
+
+                <li id="result"></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
