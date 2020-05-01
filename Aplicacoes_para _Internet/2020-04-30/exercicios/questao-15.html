@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 15</title>
+    <style>
+                * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        input {
+            font-size: 16px;
+            width: 100px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #999;
+            border-radius: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        button {
+            font-size: 18px;
+            background-color: #fff;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 8px;
+            width: 150px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: #fff;
+            background-color: #666;
+        }
+
+        .numbers {
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .mensagem {
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="numbers">
+        <h2>Complete os dados</h2>
+
+        <p class="mensagem">Operadores: 0 => soma, 1 => subtração, 2 => divisão, 3 => multiplicação</p>
+
+
+        <div>
+            <label for="#num1">Operador:</label>
+            <input type="number" id="operator">
+        </div>
+
+        <div>
+            <label for="#num2">Número 1:</label>
+            <input type="number" id="num1">
+        </div>
+
+        <div>
+           <label for="#num3">Número 2:</label>
+            <input type="number" id="num2">
+        </div>
+        
+        <button onclick="operacao()">Calcular</button>
+        <p id="text"></p>
+    </div>
+
+    <script>
+
+        let operacao = () => {
+            let operator = Number(document.querySelector('#operator').value)
+            let num1 = Number(document.querySelector('#num1').value)
+            let num2 = Number(document.querySelector('#num2').value)
+            let p = document.querySelector('#text')
+            let text = ''
+
+            switch (operator) {
+                case 0:
+                    text = `A soma entre ${num1} e ${num2} é igual a ${num1 + num2}`
+                    break
+                case 1:
+                    text = `A subtração entre ${num1} e ${num2} é igual a ${num1 - num2}`
+                    break
+                case 2:
+                    text = `A divisão entre ${num1} e ${num2} é igual a ${num1 / num2}`
+                    break
+                case 3:
+                    text = `A multiplicação entre ${num1} e ${num2} é igual a ${num1 * num2}`
+                    break
+                default:
+                    text = `Dados Inválidos! Tente novamente!`
+            }
+            
+            p.innerHTML = text
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.mostrador {
+    display: flex;
+    flex-direction: column;
+}
+
+.mostrador input {
+    width: 100px;
+}
+
+.mostrador button {
+    width: 100px;
+    margin: 10px 0;
+}
