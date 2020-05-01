@@ -1,5 +1,3 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Joao-Dezan/Faculdade-CC) 
-
 # Faculdade-CC
 Repósitorio dos meus códigos fontes feitos na faculdade, no curso de Ciência da Computação.
 
@@ -16,6 +14,9 @@ Aplicações para Internet
 
 ### Programação de Computadores
   Portugol (VisualG)
+  
+### OAC
+  Softwares: Logisim
 
 ### Aplicações para Internet
   HTML5, CSS3, JavaScript
@@ -23,6 +24,4 @@ Aplicações para Internet
 <hr>
 
 ## Ferramentas e utilitários usados
-Editor: Gitpod <br />
-&nbsp;&nbsp;&nbsp;&nbsp;Theme: Dracula Theme <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Font-famlily: Fira Code
+Editor: Visual Studio Code
