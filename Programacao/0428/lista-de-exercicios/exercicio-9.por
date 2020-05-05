@@ -8,7 +8,7 @@ programa
 		real crianca_soma_pesos=0.0, jovem_soma_pesos=0.0, adulto_soma_pesos=0.0, idoso_soma_pesos=0.0
 		real peso, crianca_media_pesos, jovem_media_pesos, adulto_media_pesos, idoso_media_pesos
 
-		para (inteiro cont=0; cont < 3; cont++) {
+		para (inteiro cont=0; cont < 20; cont++) {
 			escreva("Idade: ")
 			leia(idade)
 			escreva("Peso: ")
@@ -48,7 +48,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1261; 
+ * @POSICAO-CURSOR = 412; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
