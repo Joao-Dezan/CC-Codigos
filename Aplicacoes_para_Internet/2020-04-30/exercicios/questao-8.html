@@ -91,11 +91,16 @@
             let anuidade = Number(document.querySelector('#anuidade').value)
             let p = document.querySelector('#text')
 
-            for (let cont = 1; cont < month; cont++) {
-                anuidade += anuidade * 5 / 100
+            if (month >= 1 && month <= 12 && anuidade > 0) {
+                for (let cont = 1; cont < month; cont++) {
+                    anuidade += anuidade * 5 / 100
+                }
+
+                p.innerHTML = `Total da anuidade à pagar neste mês: R$${anuidade.toFixed(2).replace('.', ',')}`
+            } else {
+                p.innerHTML = "Dados Inválidos! Verifique e tente novamente."
             }
 
-            p.innerHTML = `Total da anuidade à pagar neste mês: R$${anuidade.toFixed(2).replace('.', ',')}`
         }
 
     </script>
