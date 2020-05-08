@@ -54,6 +54,8 @@
 
             let number = Number(document.querySelector('#number').value)
             let cont = 1
+
+            number = number < 100 ? number : 100
             
             while (cont <= number) {
                 let item = document.createElement('li')
