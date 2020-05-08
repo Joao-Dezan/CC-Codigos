@@ -83,6 +83,17 @@ function calcular(value, operator=false) {
                     calc.numbers.push(mul)
                     
                     break
+
+                case '^':
+                    let exp = calc.numbers[0]
+                    
+                    for (let number = 1; number < calc.numbers.length; number++) {
+                        exp **= calc.numbers[number]
+                    }
+
+                    calc.numbers = []
+                    calc.numbers.push(exp)
+                    break
             }
 
         }
