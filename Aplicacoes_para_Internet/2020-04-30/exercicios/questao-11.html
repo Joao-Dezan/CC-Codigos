@@ -35,10 +35,13 @@
 <body>
 
     <div id="content">
-        <label for="#number">Até quanto queres contar?</label>
-        <input type="number" id="number">
+        <label for="#limite-inferior">Início</label>
+        <input type="number" id="limite-inferior">
+
+        <label for="#limite-superior">Fim</label>
+        <input type="number" id="limite-superior">
     
-        <button onclick="showNumbers()">Contar</button>
+        <button onclick="showNumbers()">Mostrar</button>
     
         <ul id="list-numbers">
 
@@ -52,18 +55,23 @@
             // limpa os números anteriores caso haja
             document.querySelector('#list-numbers').innerHTML = ''
 
-            let number = Number(document.querySelector('#number').value)
-            let cont = 1
+            let limite_inferior = Number(document.querySelector('#limite-inferior').value)
+            let limite_superior = Number(document.querySelector('#limite-superior').value)
+
+            // Atribui Valores padrões caso digitar um inválido
+            limite_inferior = limite_inferior >= 0 ? limite_inferior : 0
+            limite_superior = limite_superior >= 0 ? limite_superior : 0
             
-            while (cont <= number) {
+            while (limite_inferior <= limite_superior) {
                 let item = document.createElement('li')
 
                 item.className = 'item'
-                item.innerHTML = cont
+
+                if (limite_inferior % 2 == 0) item.innerHTML = limite_inferior
 
                 document.querySelector('#list-numbers').appendChild(item)
 
-                cont++
+                limite_inferior++
             }
 
         }
