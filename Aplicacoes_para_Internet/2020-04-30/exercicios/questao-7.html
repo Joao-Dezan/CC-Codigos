@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 7</title>
+
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        input {
+            font-size: 16px;
+            width: 100px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #999;
+            border-radius: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        button {
+            font-size: 18px;
+            background-color: #fff;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 8px;
+            width: 150px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: #fff;
+            background-color: #666;
+        }
+
+        .numbers {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="numbers">
+        <h2>Plano de Saúde</h2>
+
+        <div>
+            <label for="#age">Idade:</label>
+            <input type="number" id="age">
+        </div>
+        
+        <button onclick="saude()">Calcular</button>
+        <p id="text"></p>
+    </div>
+
+
+
+    <script>
+
+        let saude = () => {
+            let age = Number(document.querySelector('#age').value)
+            let p = document.querySelector('#text')
+
+            let value = 100
+
+            if (age < 10) {
+                value += 80
+            } else if (age < 30) {
+                value += 50
+            } else if (age < 60) {
+                value += 95
+            } else {
+                value += 130
+            }
+
+            p.innerHTML = `Valor do plano de saúde: R$${value.toFixed(2).replace('.', ',')}`
+        }
+
+    </script>
+    
+</body>
+</html>

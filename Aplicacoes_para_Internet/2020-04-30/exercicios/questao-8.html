@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 5</title>
+
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        input {
+            font-size: 16px;
+            width: 100px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #999;
+            border-radius: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        button {
+            font-size: 18px;
+            background-color: #fff;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 8px;
+            width: 150px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: #fff;
+            background-color: #666;
+        }
+
+        #data {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .numbers {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="numbers">
+        <h2>Cheque o valor da anuidade da Associação</h2>
+
+        <h3>Por favor, digite o número do mês, conforme abaixo.</h3>
+        <h3>Mês (1 - janeiro, 2 - fevereiro, 3 - março) </h3>
+
+        <hr />
+
+        <div id="dados">
+            <div>
+                <label for="#month">Pago no mês:</label>
+                <input type="number" id="month">
+            </div>
+    
+            <div>
+                <label for="#anuidade">Valor da anuidade:</label>
+                <input type="number" id="anuidade">
+            </div>
+        </div>
+        
+        <button onclick="anuidade()">Calcular</button>
+        <p id="text"></p>
+    </div>
+
+
+
+    <script>
+
+        let anuidade = () => {
+            let month = Number(document.querySelector('#month').value)
+            let p = document.querySelector('#text')
+            let anuidade = Number(document.querySelector('#anuidade').value)
+            let total = anuidade
+
+            for (let cont = 1; cont < month; cont++) {
+                total += total * 5 / 100
+            }
+
+            p.innerHTML = `Total da anuidade à pagar neste mês: R$${total.toFixed(2).replace('.', ',')}`
+        }
+
+    </script>
+    
+</body>
+</html>

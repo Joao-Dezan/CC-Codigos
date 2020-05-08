@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: url('./assets/background.jpg') repeat-x #FFEFD5;
+        }
+        #main-content {
+            padding: 10px 10px;
+        }
+
+        #imc {
+            min-width: 400px;
+            max-width: 500px;
+            width: 30%;
+            margin: 20px 40px;
+            padding: 0 20px;
+            background: rgb(253, 250, 246);
+            border-radius: 10px;
+            float: left;
+        }
+
+        #imc ul {
+            list-style: none;
+        }
+
+        #imc ul li {
+            font-size: 22px;
+            padding: 20px;
+        }
+
+        #imc ul li h1 {
+            text-align: center;
+            font-size: 32px;
+            color: rgb(73, 73, 73);
+        }
+
+        #imc ul li input {
+            width: 120px;
+            vertical-align: top;
+            box-sizing: border-box;
+            padding: 6px;
+            border: 1px solid rgb(245, 164, 132);
+            border-radius: 3px;
+            float: right;
+        }
+
+        #imc ul li button {
+            width: 250px;
+            color: #000;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 7px;
+            display: block;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid rgb(245, 164, 132);
+            border-radius: 6px;
+        }
+
+        #imc ul li button:hover {
+            color: #fff;
+            background: rgb(229, 169, 165);
+        }
+
+        #result {
+            text-align: center;
+            color: rgb(56, 56, 56);
+        }
+
+        #result div {
+            padding: 10px;
+        }
+
+        #content {
+            padding: 10px 10px 0 40px;
+            min-width: 400px;
+            width: 50%;
+            float: left;
+        }
+
+        #content a {
+            float: left;
+            font-size: 18px;
+            color: rgb(43, 42, 42);
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        #content a:hover {
+            color: rgb(83, 83, 83);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar">
+        <h1>Descubra seu IMC</h1>
+    </div>
+
+    <div id="main-content">
+        
+        <div id="content">
+
+            <h1>Atenção</h1>
+            <h2></h2>
+
+            <p>Digite os seus dados aqui na direita para verificar seu IMC (Índice de Massa Corporal) e verificar se você está com o "peso ideal".</p>
+            <a href="" target="_blank"></a>
+        </div>
+
+        <div id="imc">
+            <ul>
+                <li>
+                    <h1>Calcule seu IMC</h1>
+                </li>
+                
+                <li>
+                    <label for="weight">Seu peso em Kg: </label>
+                    <input type="number" id="weight">
+                </li>
+
+                <li>
+                    <label for="height">Sua altura em metros:</label>
+                    <input type="number" id="height">
+                </li>
+
+                <li>
+                    <button type="submit" onclick="imc()">Calcular</button>
+                </li>
+
+                <li id="result"></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function imc() {
+        let weight = document.querySelector('#weight').value
+        let height = document.querySelector('#height').value
+
+        let imc = (weight / (height * height)).toFixed(2)
+
+        let title = null
+        let text = null
+        let aviso = null
+
+        if (imc < 18.5) {
+            title = 'Dica'
+            text = 'Você está abaixo do peso'
+        } else if (imc < 25) {
+            title = 'Muito bem'
+            text = 'Você está com o peso normal'
+        } else if (imc < 30) {
+            title = 'Fique atento'
+            text = 'Você está acima do peso'
+        } else if (imc < 35) {
+            title = 'Cuidado'
+            text = 'Você está com obesidade grau 1'
+        } else if (imc < 40) {
+            title = 'Procure um médico'
+            text = 'Você está com obesidade grau 2 (Severa)'
+        } else {
+            title = 'Procure um médico'
+            text = 'Você está com obesidade grau 3 (Mórbida)'
+        }
+
+        if (!weight && !height) {
+            document.querySelector('#imc ul #result').innerHTML = `<div>Digite seus dados antes de calcular</div>`
+
+        } else if (!weight) {
+            document.querySelector('#imc ul #result').innerHTML = `<div>Faltou digitar seu peso!</div>`
+
+        } else if (!height) {
+            document.querySelector('#imc ul #result').innerHTML = `<div>Faltou digitar sua altura</div>`
+
+        } else if (weight > 500 | weight <= 0 | height > 3 | height <= 0) {
+            document.querySelector('#imc ul #result').innerHTML = `<div>Dados Inválido. Tente novamente!</div>`
+
+        } else {
+            document.querySelector('#imc ul #result').innerHTML = `<div>Resultado: ${imc}</div>`
+
+            document.querySelector("#content h1").innerHTML = title
+            document.querySelector("#content h2").innerHTML = `<strong>${text}</strong>`
+        }
+    }
+    </script>
+</body>
+</html>
