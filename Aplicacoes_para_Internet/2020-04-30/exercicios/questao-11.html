@@ -62,7 +62,7 @@
             limite_inferior = limite_inferior >= 0 ? limite_inferior : 0
             limite_superior = limite_superior >= 0 ? limite_superior : 0
             
-            while (limite_inferior <= limite_superior) {
+            for (limite_inferior; limite_inferior <= limite_superior; limite_inferior++) {
                 let item = document.createElement('li')
 
                 item.className = 'item'
@@ -70,8 +70,6 @@
                 if (limite_inferior % 2 == 0) item.innerHTML = limite_inferior
 
                 document.querySelector('#list-numbers').appendChild(item)
-
-                limite_inferior++
             }
 
         }
