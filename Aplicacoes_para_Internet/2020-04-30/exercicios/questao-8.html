@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Questão 5</title>
+    <title>Questão 8</title>
 
     <style>
         * {
@@ -68,13 +68,13 @@
 
         <div id="dados">
             <div>
+                <label for="#anuidade">Valor R$</label>
+                <input type="number" id="anuidade">
+            </div>
+
+            <div>
                 <label for="#month">Pago no mês:</label>
                 <input type="number" id="month">
-            </div>
-    
-            <div>
-                <label for="#anuidade">Valor da anuidade:</label>
-                <input type="number" id="anuidade">
             </div>
         </div>
         
@@ -88,15 +88,14 @@
 
         let anuidade = () => {
             let month = Number(document.querySelector('#month').value)
-            let p = document.querySelector('#text')
             let anuidade = Number(document.querySelector('#anuidade').value)
-            let total = anuidade
+            let p = document.querySelector('#text')
 
             for (let cont = 1; cont < month; cont++) {
-                total += total * 5 / 100
+                anuidade += anuidade * 5 / 100
             }
 
-            p.innerHTML = `Total da anuidade à pagar neste mês: R$${total.toFixed(2).replace('.', ',')}`
+            p.innerHTML = `Total da anuidade à pagar neste mês: R$${anuidade.toFixed(2).replace('.', ',')}`
         }
 
     </script>
