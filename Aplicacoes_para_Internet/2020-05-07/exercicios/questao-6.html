@@ -12,21 +12,29 @@
 
         body {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            background: url('./assets/background.jpg') repeat-x #FFEFD5;
+            background: url('./assets/background.jpg') repeat-x;
         }
+
+        h1, h2 {
+            padding: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
         #main-content {
             padding: 10px 10px;
+            text-align: center;
         }
 
         #imc {
-            min-width: 400px;
-            max-width: 500px;
-            width: 30%;
-            margin: 20px 40px;
-            padding: 0 20px;
-            background: rgb(253, 250, 246);
+            margin: 0 auto;
+            width: 500px;
+            margin-top: 10px;
+            border: 1px solid #aaa;
             border-radius: 10px;
-            float: left;
         }
 
         #imc ul {
@@ -49,27 +57,24 @@
             vertical-align: top;
             box-sizing: border-box;
             padding: 6px;
-            border: 1px solid rgb(245, 164, 132);
             border-radius: 3px;
             float: right;
         }
 
         #imc ul li button {
+            cursor: pointer;
             width: 250px;
             color: #000;
             font-size: 20px;
             font-weight: 500;
             padding: 7px;
-            display: block;
-            margin: 0 auto;
             background: #fff;
-            border: 1px solid rgb(245, 164, 132);
             border-radius: 6px;
         }
 
         #imc ul li button:hover {
             color: #fff;
-            background: rgb(229, 169, 165);
+            background-color: #555;
         }
 
         #result {
@@ -80,44 +85,18 @@
         #result div {
             padding: 10px;
         }
-
-        #content {
-            padding: 10px 10px 0 40px;
-            min-width: 400px;
-            width: 50%;
-            float: left;
-        }
-
-        #content a {
-            float: left;
-            font-size: 18px;
-            color: rgb(43, 42, 42);
-            margin-top: 15px;
-            text-decoration: none;
-        }
-
-        #content a:hover {
-            color: rgb(83, 83, 83);
-        }
     </style>
 </head>
 <body>
-
-    <div id="navbar">
-        <h1>Descubra seu IMC</h1>
-    </div>
-
     <div id="main-content">
-        
-        <div id="content">
 
+        <div id="content">    
             <h1>Atenção</h1>
-            <h2></h2>
-
-            <p>Digite os seus dados aqui na direita para verificar seu IMC (Índice de Massa Corporal) e verificar se você está com o "peso ideal".</p>
+                    
+            <h2>Digite os seus dados para verificar seu IMC (Índice de Massa Corporal) e verificar se você está com o "peso ideal".</h2>
             <a href="" target="_blank"></a>
         </div>
-
+        
         <div id="imc">
             <ul>
                 <li>
@@ -128,16 +107,16 @@
                     <label for="weight">Seu peso em Kg: </label>
                     <input type="number" id="weight">
                 </li>
-
+                
                 <li>
                     <label for="height">Sua altura em metros:</label>
                     <input type="number" id="height">
                 </li>
-
+                
                 <li>
                     <button type="submit" onclick="imc()">Calcular</button>
                 </li>
-
+                
                 <li id="result"></li>
             </ul>
         </div>
@@ -191,7 +170,7 @@
             document.querySelector('#imc ul #result').innerHTML = `<div>Resultado: ${imc}</div>`
 
             document.querySelector("#content h1").innerHTML = title
-            document.querySelector("#content h2").innerHTML = `<strong>${text}</strong>`
+            document.querySelector("#content h2").innerHTML = text
         }
     }
     </script>
