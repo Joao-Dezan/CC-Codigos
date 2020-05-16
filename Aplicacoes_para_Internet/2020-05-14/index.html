@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function resultado(valor_campo) {
+            return document.getElementById(valor_campo);
+
+        }
+
+        function getValor(valor_campo) {
+            var valor = document.getElementById(valor_campo).value.replace(',','.');
+            return parseFloat(valor);
+        }
+
+        function soma() {
+            var total = getValor('produto2') + getValor('produto1');
+            resultado('resultado').value = total.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    <form id="formulario" autocomplete="on">
+
+        <fieldset>
+            <label for="#produto1">Número 1:</label>
+            <input type="number" id="produto1">
+            <label for="#produto2">Número 2:</label>
+
+            <input type="number" id="produto2" onblur="soma()">
+
+            Soma: <input name="resultado" readonly id="resultado">
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>

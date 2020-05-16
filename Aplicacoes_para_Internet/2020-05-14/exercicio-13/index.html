@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 13</title>
+</head>
+<body>
+
+    <div class="content">
+        <div class="title">
+            <h2>Convertar um número qualquer para o padrão de dinheiro</h2>
+        </div>
+
+        <div class="area-input">
+            <label for="#number">Número:</label>
+            <input id="number" onblur="main()">
+        </div>
+
+        <div class="area-result">
+            <label for="#result">Resultado:</label>
+            <input id="result" readonly>
+        </div>
+    </div>
+
+    <script>
+
+        function main() {
+            let number = Number(document.querySelector('#number').value)
+
+            if (Number.isNaN(number)) {
+                document.querySelector('#result').value = 'Valor Inválido!'
+            } else {
+                document.querySelector('#result').value = numberToReal(number)
+            }
+        }
+
+        function numberToReal(number) {
+            let real = Number(number)
+            return `R$${real.toFixed(2).replace('.', ',')}`
+        }
+
+    </script>
+    
+</body>
+</html>

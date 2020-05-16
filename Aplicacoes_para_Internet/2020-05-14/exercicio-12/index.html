@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício 12</title>
+</head>
+<body>
+
+    <label for="#heightChild1">Altura da criança 1:</label>
+    <input id="heightChild1"> <br><br>
+
+    <label for="#taxaChild1">Taxa de crescimento da criança 1:</label>
+    <input id="taxaChild1"><br><br>
+    
+    <label for="#heightChild2">Altura da criança 2:</label>
+    <input id="heightChild2"><br><br>
+
+    <label for="#taxaChild2">Taxa de crescimento da criança 2:</label>
+    <input id="taxaChild2"><br><br>
+        
+
+    <button onclick="main()">Clique</button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        function main() {
+            var heightChild1 = Number(document.querySelector('#heightChild1').value)
+            var heightChild2 = Number(document.querySelector('#heightChild2').value)
+
+            var taxaChild1 = Number(document.querySelector('#taxaChild1').value)
+            var taxaChild2 = Number(document.querySelector('#taxaChild2').value)
+
+            if (heightChild1 < heightChild2) {
+                document.querySelector('#result').innerHTML = 'Criança 1 é menor<br>'
+
+                if (taxaChild1 > taxaChild2) {
+
+                    var anos = 0
+                    
+                    while (heightChild1 < heightChild2) {
+                        heightChild1 += taxaChild1
+                        heightChild2 += taxaChild2
+
+                        anos++
+                    }
+
+                    document.querySelector('#result').innerHTML += `Criança 1 vai ultrapassar criança 2 em ${anos} anos.`
+                }
+
+            } else if (heightChild2 < heightChild1) {
+                document.querySelector('#result').innerHTML = 'Criança 2 é menor<br>'
+
+                if (taxaChild2 > taxaChild1) {
+
+                    var anos = 0
+                    
+                    while (heightChild2 < heightChild1) {
+                        heightChild1 += taxaChild1
+                        heightChild2 += taxaChild2
+
+                        anos++
+                    }
+
+                    document.querySelector('#result').innerHTML += `Criança 2 vai ultrapassar criança 1 em ${anos} anos.`
+                }
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
