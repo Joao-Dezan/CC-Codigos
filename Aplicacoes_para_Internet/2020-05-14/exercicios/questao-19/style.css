@@ -1,0 +1,137 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    color: rgb(3, 131, 61);
+}
+
+#subtitle-notas, #subtitle-coins, #subtitle-result {
+    border: 1px solid rgb(3, 131, 61);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 6px;
+    color: rgb(3, 131, 61);
+}
+
+#subtitle-result {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.subtitle-active {
+    border: 1px solid rgb(3, 131, 61);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 6px;
+    background-color: rgb(3, 131, 61);
+    color: #fff !important;
+}
+
+.content {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 300px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.content .area-input, .content button {
+    margin: 15px;
+}
+
+.content .area-input {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.content a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: bold;
+    width: 90%;
+    background-color: rgb(3, 131, 61);
+    border-radius: 8px;
+    padding: 8px 0;
+    margin-top: 15px;
+    box-shadow: 3px 3px 0 1px #027937;
+
+    transition: box-shadow 0.3s ease, transform 0.3s;
+}
+
+.content a:active {
+    box-shadow: 0 0 0 0 #035528, inset 3px 3px 3px #035528;
+    transform: translate(3px, 3px);
+}
+
+.area-input label {
+    padding: 5px;
+    font-size: 1.3em;
+}
+
+.area-input input {
+    text-align: center;
+    font-size: 1.1em;
+    width: 100px;
+    border: 1px solid rgb(3, 131, 61);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#result {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#result ul {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#result li {
+    padding: 10px;
+    border-bottom: 1px solid rgb(3, 131, 61);
+}
+
+@media (max-width: 600px) {
+    body{
+        font-size: 12px;
+    }
+
+    .content .area-input {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .content .area-input input {
+        width: 50%;
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+}

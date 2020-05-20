@@ -7,13 +7,14 @@ programa
 
 		escreva("Limite Inferior: ")
 		leia(limite_inferior)
+		
 		escreva("Limite Superior: ")
 		leia(limite_superior)
 
 		escreva("Saída: ")
 
-		para (limite_inferior; limite_inferior <= limite_superior; limite_inferior++) {
-			escreva(limite_inferior, " ")
+		para (inteiro numero = limite_inferior; numero <= limite_superior; numero++) {
+			escreva(numero, " ")
 		}
 	}
 }

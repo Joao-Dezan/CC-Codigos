@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Questão 18</title>
+</head>
+<body>
+    
+    <div class="content">
+
+        <h2 class="title">Calculadora de Aumento de Salário</h2>
+
+        <div class="dados">
+            <h3 class="subtitle">Tabela de Plano de Aumentos</h3>
+            
+            <div class="tabela-planos">
+                <table>
+                    <tr>
+                        <th>Plano</th>
+                        <th>Aumento</th>
+                    </tr>
+
+                    <tr>
+                        <td>A</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>15%</td>
+                    </tr> 
+                    <tr>
+                        <td>C</td>
+                        <td>20%</td>
+                    </tr>  
+                </table>
+            </div>
+
+            <div class="area-input">
+                <label for="#salary">Salário: R$ </label>
+                <input id="salary">
+            </div>
+        
+            <div class="area-input">
+                <label for="#plan">Plano: </label>
+                <input id="plan">
+            </div>
+        </div>
+
+        <button type="submit" onclick="main()">Calcular</button>
+
+        <div id="result">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function main() {
+
+            let salary = Number(document.querySelector('#salary').value)
+            let plan = document.querySelector('#plan').value.toUpperCase()
+            let result = document.querySelector('#result')
+            let newSalary = incrementSalary(salary, plan)
+
+            if (Number.isNaN(salary) || salary <= 0) {
+                result.innerHTML = 'Salário Inválido!'
+            } else if (plan == null || newSalary == 'Plano Inválido!') {
+                result.innerHTML = 'Plano Inválido!'
+            } else {
+                result.innerHTML = `Novo Salário: R$${newSalary.replace('.', ',')}`
+            }
+        }
+
+        function incrementSalary(salary, plan) {
+            switch (plan) {
+                case 'A':
+                    return (salary * 1.1).toFixed(2)
+                    break
+                case 'B':
+                    return (salary * 1.15).toFixed(2)
+                    break
+                case 'C':
+                    return (salary * 1.2).toFixed(2)
+                    break
+                default:
+                    return 'Plano Inválido!'
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -9,10 +9,8 @@ programa
 		leia(limite)
 		
 		escreva("Saída: ")
-		para (inteiro cont=1; cont < limite; cont++) {
-			se (nao(cont % 2 == 0)) {
-				escreva(cont, " ")
-			}
+		para (inteiro cont=1; cont < limite; cont += 2) {
+			escreva(cont, " ")
 		}
 	}
 }

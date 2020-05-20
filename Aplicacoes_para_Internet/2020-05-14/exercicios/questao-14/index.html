@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Questão 14</title>
+</head>
+<body>
+    
+    <!--
+        Elabore duas funções que recebem três parâmetros: capital inicial, taxa de juros e 
+        tempo de aplicação.A primeira função retornará o montante da aplicação financeira 
+        sob o regime de juros simples e a segunda retornará o valor da aplicação sob o 
+        regime de juros compostos.
+    -->
+
+    <div class="content">
+
+        <h2 class="title">Calculadora de Juros Simples e Compostos</h2>
+
+        <div class="area-select">
+            <label for="#juros-tipo">Tipo dos Juros: </label>
+
+            <select id="juros-tipo">
+                <option value="simples">Juros Simples</option>
+                <option value="compostos">Juros Compostos</option>
+            </select>
+        </div>
+
+        <div class="area-input">
+            <label for="#capital">Capital Inicial: </label>
+            <input id="capital">
+        </div>
+
+        <div class="area-input">
+            <label for="#taxa">Taxa de Juros [%]: </label>
+            <input id="taxa">
+        </div>
+
+        <div class="area-input">
+            <label for="#tempo">Tempo de Aplicação: </label>
+            <input id="tempo">
+        </div>
+
+        <div class="area-submit">
+            <button onclick="main()">Calcular</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+
+    <script>
+
+        function main() {
+            let tipo = document.querySelector('#juros-tipo').value
+            let result = document.querySelector('#result')
+
+            let capital = Number(document.querySelector('#capital').value)
+            let taxa = Number(document.querySelector('#taxa').value) / 100
+            let tempo = Number(document.querySelector('#tempo').value)
+
+            if (Number.isNaN(capital) || Number.isNaN(taxa) || Number.isNaN(tempo)) {
+                result.innerHTML = 'Dados Inválidos! Verifique e tente novamente.'
+            } else if (tipo == 'simples') {
+                result.innerHTML = 'Montante: ' + jurosSimples(capital, taxa, tempo)
+            } else if (tipo == 'compostos') {
+                result.innerHTML = 'Montante: ' + jurosCompostos(capital, taxa, tempo)
+            }
+        }
+
+        function jurosSimples(capitalInicial, taxaDeJuros, tempoDeAplicacao) {
+            let montante = capitalInicial + (capitalInicial * taxaDeJuros * tempoDeAplicacao)
+
+            return montante.toFixed(2)
+        }
+
+        function jurosCompostos(capitalInicial, taxaDeJuros, tempoDeAplicacao) {
+            let montante = capitalInicial * (1 + taxaDeJuros) ** tempoDeAplicacao
+
+            return montante.toFixed(2)
+        }
+
+    </script>
+</body>
+</html>

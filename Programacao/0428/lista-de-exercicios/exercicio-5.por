@@ -3,22 +3,20 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro limite_inferior, limite_superior, numero
+		inteiro limite_inferior, limite_superior, divisor
 
 		escreva("Limite Inferior: ")
 		leia(limite_inferior)
 		escreva("Limite Superior: ")
 		leia(limite_superior)
-		escreva("Número: ")
-		leia(numero)
-
-		limite_inferior++
-
+		escreva("Divisor: ")
+		leia(divisor)
+    
 		escreva("Saída: ")
 
-		para (limite_inferior; limite_inferior < limite_superior; limite_inferior++) {
-			se (limite_inferior % numero == 0) {
-				escreva(limite_inferior, " ")	
+		para (inteiro numero = limite_inferior+1; numero < limite_superior; numero++) {
+			se (numero % divisor == 0) {
+				escreva(numero , " ")	
 			}	
 		}
 	}

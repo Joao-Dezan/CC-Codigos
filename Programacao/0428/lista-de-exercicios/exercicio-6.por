@@ -10,14 +10,12 @@ programa
 		escreva("Limite Superior: ")
 		leia(limite_superior)
 
-		limite_inferior++
-
 		escreva("\nSaída: ")
 
-		para (limite_inferior; limite_inferior < limite_superior; limite_inferior++) {
-			se (limite_inferior % 2 == 0) {
-				escreva(limite_inferior, " ")
-				soma += limite_inferior
+		para (inteiro numero = limite_inferior+1; numero < limite_superior; numero++) {
+			se (numero % 2 == 0) {
+				escreva(numero, " ")
+				soma += numero
 			}	
 		}
 

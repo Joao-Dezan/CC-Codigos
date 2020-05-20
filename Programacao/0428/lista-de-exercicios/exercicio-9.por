@@ -4,9 +4,13 @@ programa
 	funcao inicio()
 	{
 		inteiro idade
-		inteiro qtd_crianca = 0, qtd_jovem = 0, qtd_adulto = 0, qtd_idoso = 0
+		real peso
+		
+		inteiro qtd_crianca = 0, qtd_jovem = 0, qtd_adulto = 0, qtd_idoso = 
+		
 		real crianca_soma_pesos=0.0, jovem_soma_pesos=0.0, adulto_soma_pesos=0.0, idoso_soma_pesos=0.0
-		real peso, crianca_media_pesos, jovem_media_pesos, adulto_media_pesos, idoso_media_pesos
+		
+		real crianca_media_pesos, jovem_media_pesos, adulto_media_pesos, idoso_media_pesos
 
 		para (inteiro cont=0; cont < 20; cont++) {
 			escreva("Idade: ")
@@ -31,10 +35,29 @@ programa
 			}
 		}
 
-		crianca_media_pesos = crianca_soma_pesos / qtd_crianca
-		jovem_media_pesos = jovem_soma_pesos / qtd_jovem
-		adulto_media_pesos = adulto_soma_pesos / qtd_adulto
-		idoso_media_pesos = idoso_soma_pesos / qtd_idoso
+		if (qtd_crianca > 0) {
+            crianca_media_pesos = crianca_soma_pesos / qtd_crianca
+		} else {
+            crianca_media_pesos = 0
+		}
+		
+		if (qtd_jovem > 0) {
+            jovem_media_pesos = jovem_soma_pesos / qtd_jovem
+		} else {
+            jovem_media_pesos = 0
+		}
+		
+		if (qtd_adulto > 0) {
+            adulto_media_pesos = adulto_soma_pesos / qtd_adulto
+		} else {
+            adulto_media_pesos = 0
+		}
+		
+		if (qtd_idoso > 0) {
+            idoso_media_pesos = idoso_soma_pesos / qtd_idoso
+		} else {
+            idoso_media_pesos = 0
+		}
 
 		escreva("\n------ Média dos pesos de cada Faixa Etária ------\n")
 		escreva("De 1 à 10 anos: ", crianca_media_pesos, "Kg\n")

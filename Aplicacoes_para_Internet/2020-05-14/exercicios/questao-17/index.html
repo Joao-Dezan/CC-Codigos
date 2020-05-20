@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Questão 17</title>
+</head>
+<body>
+
+    <div class="content">
+        <h2 class="title">Calculadora</h2>
+
+        <div class="operadores">
+            <h3 class="subtitle">Operadores</h3>
+
+            <p>[ + - x % ^ ]</p>
+            
+        </div>
+
+        <div class="area-input">
+            <label for="#number1">Número 1: </label>
+            <input id="number1">
+        </div>
+
+        <div class="area-input">
+            <label for="#number2">Número 2: </label>
+            <input id="number2">
+        </div>
+
+        <div class="area-operator">
+            <label for="#operator">Operador: </label>
+            <input type="text" id="operator" onblur="main()">
+        </div>
+
+        <button type="submit" onclick="main()">Calcular</button>
+
+        <div id="result">
+
+        </div>
+    </div>
+    
+
+    <script>
+
+        function main() {
+            let number1 = Number(document.querySelector('#number1').value)
+            let number2 = Number(document.querySelector('#number2').value)
+            let operator = document.querySelector('#operator').value
+            let result = document.querySelector('#result')
+
+            result.innerHTML = `Resultado: ${calculadora(number1, number2, operator)}`
+        }
+
+        function calculadora(number1, number2, operator) {
+            switch (operator) {
+                case '+':
+                    return number1 + number2
+                    break
+                case '-':
+                    return number1 - number2
+                    break
+                case 'x':
+                    return number1 * number2
+                    break
+                case '%':
+                case '/':
+                    return (number1 / number2).toFixed(2)
+                    break
+                case '^':
+                case '**':
+                    return (number1 ** number2)
+                    break
+                default:
+                    return 'Operador Inválido!'
+            }
+        }
+
+    </script>
+</body>
+</html>

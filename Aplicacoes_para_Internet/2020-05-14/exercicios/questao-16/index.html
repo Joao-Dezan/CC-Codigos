@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Questão 16</title>
+</head>
+<body>
+
+    <!--
+        Um homem decidiu ir à uma revenda comprar um carro. Ele deseja comprar um carro hatch, 
+        e a revenda possui, além de carros hatch, sedans, motocicletas e caminhonetes. 
+        Utilizando uma estrutura switch, caso o comprador queira o hatch, 
+        retorne: “Compra efetuada com sucesso”. Nas outras opções, 
+        retorne: “Tem certeza de que não prefere este modelo?”. 
+        Caso seja especificado um modelo que não está disponível, 
+        retorne no console: “Não trabalhamos com este tipo de automóvel aqui”.
+    -->
+
+    <div class="content">
+        <h2 class="title">Compre o carro dos seus sonhos agora!</h2>
+
+        <div class="area-automoveis">
+            <h3 class="subtitle">Escolha o modelo</h3>
+
+            <ul>
+                <li>1 - Hatch</li>
+                <li>2 - Sedan</li>
+                <li>3 - Motocicleta</li>
+                <li>4 - Caminhonete</li>
+            </ul>
+        </div>
+
+        <div class="area-input">
+            <label for="#choice-car">Sua escolha: </label>
+            <input type="number" id="choice-car">
+        </div>
+
+        <button type="submit" onclick="main()">Adquirir</button>
+
+        <div id="result">
+
+        </div>
+    </div>
+
+    <script>
+
+        function main() {
+            let choiceCar = Number(document.querySelector('#choice-car').value)
+            let result = document.querySelector('#result')
+
+            switch (choiceCar) {
+                case 1:
+                    result.innerHTML = "Compra efetuada com sucesso!"
+                break
+                case 2:
+                case 3:
+                case 4:
+                    result.innerHTML = "Tem certeza de que não prefere o modelo <strong>Hatch?</strong>"
+                    break
+                default:
+                    result.innerHTML = "Não trabalhamos com este tipo de automóvel aqui!"
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

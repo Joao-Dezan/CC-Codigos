@@ -8,10 +8,8 @@ programa
 		escreva("Digite o limite: ")
 		leia(limite)
 
-		para (inteiro cont=1; cont < limite; cont++) {
-			se (cont % 5 == 0) {
-				soma += cont
-			}
+		para (inteiro cont=5; cont < limite; cont += 5) {
+			soma += cont
 		}
 
 		escreva("Saída: ", soma)

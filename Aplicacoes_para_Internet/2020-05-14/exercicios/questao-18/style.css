@@ -1,0 +1,74 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.content table, tr, td, th {
+    border: 1px solid #aaa;
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    color: rgb(1, 58, 27);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 22px;
+    color: rgb(3, 114, 58);
+}
+
+.dados {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.tabela-planos {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.tabela-planos table {
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.area-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+}
+
+.content button {
+    cursor: pointer;
+    font-size: 18px;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    padding: 5px 0;
+}
+
+.content button:hover {
+    background-color: rgb(2, 175, 117);
+    color: #fff;
+}
+
+#result {
+    color: rgb(6, 128, 77);
+    font-size: 22px;
+    padding: 30px;
+    font-weight: 600;
+}

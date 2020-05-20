@@ -10,9 +10,9 @@ programa
 
 		escreva("Saída: ")
 
-		para (inteiro cont=1; cont <= limite; cont++) {
-			se ((cont % 3 == 0) e (cont % 5 == 0)) {
-				escreva(cont, " ")	
+		para (inteiro numero=1; numero <= limite; numero++) {
+			se ((numero % 3 == 0) e (numero % 5 == 0)) {
+				escreva(numero, " ")	
 			}	
 		}
 	}
